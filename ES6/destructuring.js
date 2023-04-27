@@ -37,6 +37,7 @@ function printName({ firstName, lastName }) {
   return firstName + ' ' + lastName;
 }
 console.log(printName({ firstName: 'Audi', lastName: 'Lu' })); // Audi Lu
+
 // 如果函式有很多 property 時很好用，請見下方舉例
 function printPersonDescription1(
   firstName,
