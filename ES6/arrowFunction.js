@@ -15,7 +15,7 @@ const fn3 = () => {
   return 'Hello arrow function';
 };
 
-// 如果只有一個參數的話，掛號可以省略
+// 如果只有一個參數的話，刮號可以省略
 // 沒有參數或多個參數的話，要加小掛號
 // prettier-ignore
 const logName = name => {
@@ -26,7 +26,7 @@ const logName = name => {
 // expression 的值會自動 return (implicit return)
 const sumTwoNumbers1 = (num1, num2) => num1 + num2;
 const sumTwoNumbers2 = (num1, num2) => {
-  num1 + num2;
+ return num1 + num2;
 };
 console.log(sumTwoNumbers1(1, 1), sumTwoNumbers2(1, 1)); // 2, undefined
 
@@ -41,8 +41,13 @@ const logName2 = () => {
 };
 const object = {
   name: 'apo',
-  logName1,
+  logName1: logName1,
   logName2,
 };
+logName1()
+object.logName1()
+logName2()
+object.logName2()
+
 // this 我還沒算很搞懂，有請huli大大
 // https://blog.huli.tw/2019/02/23/javascript-what-is-this/#%E4%B8%8D%E5%90%88%E7%BE%A4%E7%9A%84%E7%AE%AD%E9%A0%AD%E5%87%BD%E5%BC%8F

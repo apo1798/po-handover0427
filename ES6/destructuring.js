@@ -13,10 +13,11 @@ const { cash, points, unknown } = { cash: 200, points: 0 };
 // 相當於是 const cash = 200, points = 0, unknown = undefined
 
 let {
-  skin: skinColor,
   body: { height: bodyHeight, weight: bodyWeight },
+  skin: skinColor,
 } = { skin: 'yellow', body: { height: 183, weight: 70 } };
 // 相當於是 let skinColor = 'yellow', bodyHeight = 183, weight = 70
+// console.log({skinColor, bodyWeight, bodyHeight})
 
 // 給予預設值
 const [favColor1 = 'yollow', favColor2 = 'green'] = ['purple'];
@@ -33,10 +34,19 @@ function addTwoNumberInArray([num1, num2]) {
 }
 console.log(addTwoNumberInArray([400, 20])); // 420
 
-function printName({ firstName, lastName }) {
+function printName({ firstName = 'Apo', lastName = 'Chen' }) {
   return firstName + ' ' + lastName;
 }
 console.log(printName({ firstName: 'Audi', lastName: 'Lu' })); // Audi Lu
+// const  { firstName: firstNameNew, lastName } = { firstName: 'Audi', lastName: 'Lu' }
+
+// printName(undefined) // undefined.firstName
+// console.log(printName({})) // {}.firstName => undefiend
+
+
+const secretNumber = '';
+console.log({secretNumber})
+
 
 // 如果函式有很多 property 時很好用，請見下方舉例
 function printPersonDescription1(
