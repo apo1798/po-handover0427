@@ -1,34 +1,26 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import Counter from './components/Counter';
 import Person from './components/Person';
 import Input from './components/Input';
+import UseEffectPratice from './components/UseEffectPratice';
 
-function App1() {
-  const [count, setCount] = useState(0);
-  const [isSenior, setIsSenior] = useState(false);
-  // const isSenior = false
-
-  const name1 = 'apo';
-  const name2 = 'audi';
-
-  const handleButtonClick = (e) => {
-    const newValue = !isSenior;
-    setIsSenior(newValue);
-
-    setIsSenior((state) => {
-      return state;
-    });
-  };
-
-  const person = { name: 'Bob', age: 12, isCute: true };
+function App() {
+  const [showComponent, setShowComponent] = useState(true);
 
   return (
     <>
-      <Input />
-      <input type='text' className='input' />
+      <div style={{ background: 'purple', padding: '2rem' }} id='hello'></div>
+      <button
+        onClick={() => {
+          setShowComponent((state) => !state);
+        }}
+      >
+        Show or hide
+      </button>
+      {showComponent && <UseEffectPratice />}
+      {/* <Input /> */}
       {/* <h1>{isSenior ? name2 : name1}</h1>
 
 
@@ -63,4 +55,4 @@ function App1() {
   );
 }
 
-export default App1;
+export default App;
