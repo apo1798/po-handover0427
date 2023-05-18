@@ -5,13 +5,16 @@ import Counter from './components/Counter';
 import Person from './components/Person';
 import Input from './components/Input';
 import UseEffectPratice from './components/UseEffectPratice';
+import MemoEntry from './components/memo/MemoEntry';
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
 
   return (
     <>
-      <div style={{ background: 'purple', padding: '2rem' }} id='hello'></div>
+      <MemoEntry />
+      {/* Use Effect */}
+      {/* <div style={{ background: 'purple', padding: '2rem' }} id='hello'></div>
       <button
         onClick={() => {
           setShowComponent((state) => !state);
@@ -19,7 +22,9 @@ function App() {
       >
         Show or hide
       </button>
-      {showComponent && <UseEffectPratice />}
+      {showComponent && <UseEffectPratice />} */}
+      {/* <UseEffectPratice /> */}
+      {/* Basic Practice */}
       {/* <Input /> */}
       {/* <h1>{isSenior ? name2 : name1}</h1>
 

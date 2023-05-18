@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import UseEffectWithFetch from './UseEffectWithFetch';
 
 const UseEffectPratice = () => {
   const [count, setCount] = useState(0);
@@ -25,7 +26,6 @@ const UseEffectPratice = () => {
   // 👱‍♀️ 沒有 p2 (沒有 dependency array) => 相當於沒加（執行順序還是在他後面）
 
   // useEffect 註冊 dom 事件, setTimeout
-
   console.log('in function body');
 
   // 呼叫 API endpoint
@@ -55,6 +55,7 @@ const UseEffectPratice = () => {
 
   // DOM 事件
   useEffect(() => {
+    if (document.querySelector('#hello') == null) return;
     // Component 渲染之後執行
     console.log('Callback');
     const registerClickEvent = () => {
@@ -99,6 +100,7 @@ const UseEffectPratice = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       /> */}
+      <UseEffectWithFetch />
     </div>
   );
 };
